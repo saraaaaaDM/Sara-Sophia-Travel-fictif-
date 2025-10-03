@@ -1,6 +1,6 @@
 :root{
       --accent:#0b72ff;
-      --muted:#a9a9a9;
+      --muted:#414141;
       --bg:#f7f9fc;
       --card:#ffffff;
       --radius:12px;
@@ -20,6 +20,12 @@
       padding:32px 16px;
       display:flex;
       justify-content:center;
+    }
+
+
+    span{
+        color: #0b72ff;
+        font-style: bold;
     }
 
     .site{
@@ -47,7 +53,7 @@
       width:56px;
       height:56px;
       border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),#4ec6ff);
+      /*background:linear-gradient(135deg,var(--accent),#4ec6ff);*/
       display:grid;
       place-items:center;
       color:white;
@@ -157,10 +163,11 @@
       position:absolute;
       left:18px;
       bottom:18px;
-      background:linear-gradient(90deg, rgba(12,18,30,0.9), rgba(12,18,30,0.6));
-      color:white;
+      background:rgba(255, 255, 255, 0.672);
+      color:rgb(0, 0, 0);
       padding:12px 14px;
       border-radius:10px;
+      border: 1px solid white;
       max-width:70%;
       box-shadow:0 8px 30px rgba(3,10,20,0.4);
     }
