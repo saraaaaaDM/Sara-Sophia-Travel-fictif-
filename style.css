@@ -1,0 +1,267 @@
+:root{
+      --accent:#0b72ff;
+      --muted:#a9a9a9;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --radius:12px;
+      --shadow: 0 6px 20px rgba(20,30,60,0.08);
+      --max-width:1200px;
+      --gap:20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .site{
+      width:100%;
+      max-width:var(--max-width);
+      background:transparent;
+    }
+
+    header.site-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:var(--gap);
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .brand .logo{
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#4ec6ff);
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+    .brand h1{margin:0;font-size:18px;letter-spacing:-0.2px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav.top-nav{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    nav.top-nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:14px;
+      padding:10px 12px;
+      border-radius:8px;
+    }
+    nav.top-nav a.primary{
+      background:var(--card);
+      color:var(--accent);
+      box-shadow:var(--shadow);
+      font-weight:600;
+    }
+
+    /* Layout: hero + sidebar mimic (WordPress widget area) */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:var(--gap);
+      align-items:start;
+      margin-bottom:28px;
+    }
+
+    .hero-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card .lead{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .hero-card h2{margin:0 0 6px 0;font-size:26px}
+    .hero-card p.lead-text{margin:0;color:var(--muted)}
+    .cta-row{
+      margin-top:16px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      border:0;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn.primary{background:var(--accent);color:white;box-shadow:0 6px 18px rgba(11,114,255,0.18)}
+    .btn.ghost{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+
+    /* Sidebar widgets */
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .widget{
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      padding:14px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+    }
+    .widget h3{margin:0 0 10px 0;font-size:15px}
+
+    /* Carousel */
+    .carousel{
+      margin-top:18px;
+      position:relative;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .carousel-track{
+      display:flex;
+      transition:transform 450ms cubic-bezier(.2,.9,.3,1);
+      will-change:transform;
+    }
+    .carousel-slide{
+      min-width:100%;
+      position:relative;
+      height:340px;
+      display:block;
+      background-size:cover;
+      background-position:center;
+    }
+    .carousel-caption{
+      position:absolute;
+      left:18px;
+      bottom:18px;
+      background:linear-gradient(90deg, rgba(12,18,30,0.9), rgba(12,18,30,0.6));
+      color:white;
+      padding:12px 14px;
+      border-radius:10px;
+      max-width:70%;
+      box-shadow:0 8px 30px rgba(3,10,20,0.4);
+    }
+    .carousel-controls{
+      position:absolute;
+      right:12px;
+      top:12px;
+      display:flex;
+      gap:8px;
+    }
+    .carousel-controls button{
+      background:rgba(255, 255, 255, 0.531);
+      border:1px solid white;
+      padding:8px;
+      border-radius:8px;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    .section{
+      margin-bottom:28px;
+    }
+    .section h3{margin:0 0 12px 0}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+    }
+    .card .thumb{
+      height:160px;
+      background-size:cover;
+      background-position:center;
+    }
+    .card .card-body{
+      padding:12px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .price{
+      font-weight:700;
+      color:var(--accent);
+    }
+    .meta{font-size:13px;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{
+      display:flex;
+      gap:14px;
+      align-items:stretch;
+    }
+    .testimonial{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      flex:1;
+    }
+    .testimonial p{margin:0;color:var(--muted)}
+
+    footer{
+      margin-top:28px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero{grid-template-columns:1fr}
+      .carousel-slide{height:260px}
+    }
+    @media (max-width:640px){
+      body{padding:18px}
+      .grid{grid-template-columns:1fr}
+      nav.top-nav{display:none}
+      .brand h1{font-size:16px}
+      .carousel-slide{height:200px}
+      .hero-card h2{font-size:20px}
+    }
+
+    /* small util */
+    .muted{color:var(--muted);font-size:13px}
+    .pill{font-size:12px;padding:6px 8px;border-radius:999px;background:#f1f7ff;color:var(--accent)}

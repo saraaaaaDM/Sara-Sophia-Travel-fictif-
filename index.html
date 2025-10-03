@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sara-Sophia Travel — Agence de voyage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+
+<body>
+    <div class="site" id="site">
+
+        <header class="site-header" role="banner">
+            <a class="brand" href="#" aria-label="Sara-Sophia Travel home">
+                <div class="logo" aria-hidden="true">SS</div>
+                <div>
+                    <h1>Sara-Sophia Travel</h1>
+                    <p>Agence indépendante • Voyages & aventures</p>
+                </div>
+            </a>
+
+            <nav class="top-nav" role="navigation" aria-label="Main navigation">
+                <a href="#destinations">Destinations</a>
+                <a href="#tours">Tours</a>
+                <a href="#contact">Contact</a>
+                <a class="primary" href="#book">Réserver</a>
+            </nav>
+        </header>
+
+        <!-- HERO + SIDEBAR -->
+        <main>
+            <section class="hero">
+                <div class="hero-card" aria-labelledby="hero-title">
+                    <div class="lead">
+                        <div style="flex:1">
+                            <h2 id="hero-title">Explorez le monde avec Sara-Sophia</h2>
+                            <p class="lead-text">Offres sélectionnées, itinéraires sur-mesure et assistance 24/7. On
+                                s’occupe de tout, vous n'avez plus qu'à profitez !</p>
+
+                            <div class="cta-row">
+                                <button class="btn primary"
+                                    onclick="document.getElementById('tours').scrollIntoView({behavior:'smooth'})">Voir
+                                    les offres</button>
+                                <button class="btn ghost" onclick="alert('fictif')">Contact
+                                    rapide</button>
+                            </div>
+                        </div>
+
+                        <!-- mini widget: featured price -->
+                        <aside class="widget" aria-label="Offre du moment" style="width:200px;flex-shrink:0">
+                            <h3>Offre du moment</h3>
+                            <div>
+                                <strong>Lisbonne & Algarve</strong>
+                                <p class="muted" style="margin:6px 0 10px 0">5 jours • vols + hébergement</p>
+                                <div style="display:flex;justify-content:space-between;align-items:center">
+                                    <div>
+                                        <div class="price">€349</div>
+                                        <div class="muted">par personne</div>
+                                    </div>
+                                    <div><button class="btn primary" style="padding:8px 10px;font-size:13px"
+                                            onclick="alert('fictif')">Réserver</button></div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- Carousel under hero text -->
+                    <div class="carousel" aria-roledescription="carousel" aria-label="Sélection de voyages"
+                        id="heroCarousel">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide"
+                                style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=af9c4b1f7a8f7b6222d0dd7f61b2b5f7');"
+                                data-title="Plages tropicales">
+                                <div class="carousel-caption">
+                                    <strong>Plages tropicales</strong>
+                                    <div class="muted">Sable blanc • Aventure • €999</div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide"
+                                style="background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c1c2ef9b7bb9a6e7c70d1f386ad4a89');"
+                                data-title="Montagnes & randos">
+                                <div class="carousel-caption"><strong>Randos en altitude</strong>
+                                    <div class="muted">Guides locaux • 7 jours • €720</div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide"
+                                style="background-image:url('https://www.easyjet.com/holidays/cms/media/-/jssmedia/images/homepage/destinations/netherlands_amsterdam_sunrise.jpg?h=3295&iar=0&w=4949&hash=C02A6021BE3510B5CD3C440FC4224CC6');"
+                                data-title="City break">
+                                <div class="carousel-caption"><strong>City breaks européens</strong>
+                                    <div class="muted">Culture • Food tours • €199</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls" aria-hidden="false">
+                            <button id="prevBtn" aria-label="Précédent">◀</button>
+                            <button id="nextBtn" aria-label="Suivant">▶</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar widgets area (mimic WP widgets) -->
+                <aside class="sidebar" aria-label="Barre latérale">
+                    <div class="widget" aria-hidden="false">
+                        <h3>Recherche rapide</h3>
+                        <form onsubmit="event.preventDefault(); alert('fictif: ' + this.query.value)">
+                            <input name="query" placeholder="Ex: Bali, Lisbonne..."
+                                style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef3fb" />
+                            <div style="margin-top:10px;display:flex;gap:8px">
+                                <select aria-label="Durée"
+                                    style="flex:1;padding:8px;border-radius:8px;border:1px solid #eef3fb">
+                                    <option>3-5 jours</option>
+                                    <option>6-9 jours</option>
+                                    <option>10+ jours</option>
+                                </select>
+                                <button class="btn primary" type="submit">Go</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Newsletter</h3>
+                        <p class="muted">Recevez des offres exclusives deux fois par mois.</p>
+                        <form onsubmit="event.preventDefault(); alert('Inscrit(e) — fictif : ' + this.email.value)">
+                            <input name="email" type="email" placeholder="ton@email.com"
+                                style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eef3fb" />
+                            <div style="margin-top:8px"><button class="btn primary" type="submit">S'inscrire</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Contact</h3>
+                        <p class="muted">support@sara-sophia.travel<br>+33 1 23 45 67 89</p>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- Tours section -->
+            <section id="tours" class="section">
+                <h3>Nos circuits populaires</h3>
+                <div class="grid" role="list">
+
+                    <article class="card" role="listitem" aria-labelledby="t1">
+                        <div class="thumb"
+                            style="background-image:url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/88658486.jpg?k=05e48e9b389d48ba17f4250b8e96ce814cf8a73172f74ed84f99245d1e60005e&o=&hp=1')">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h4 id="t1" style="margin:0;font-size:16px">Aventure Costa Rica</h4>
+                                <div class="meta">10 jours • Nature & surf</div>
+                            </div>
+                            <div class="price-row">
+                                <div>
+                                    <div class="muted">à partir de</div>
+                                    <div class="price">€1 450</div>
+                                </div>
+                                <div><button class="btn primary" onclick="alert('fictif')">Voir</button></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem" aria-labelledby="t2">
+                        <div class="thumb"
+                            style="background-image:url('https://cdn2.civitatis.com/portugal/lisboa/guia/lisbon-tram-seo.jpg')">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h4 id="t2" style="margin:0;font-size:16px">Escapade Lisbonne</h4>
+                                <div class="meta">4 jours • Culture & gastronomie</div>
+                            </div>
+                            <div class="price-row">
+                                <div>
+                                    <div class="muted">à partir de</div>
+                                    <div class="price">€289</div>
+                                </div>
+                                <div><button class="btn primary" onclick="alert('fictif')">Voir</button></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem" aria-labelledby="t3">
+                        <div class="thumb"
+                            style="background-image:url('https://www.nomade-aventure.com/Content/Images/ImgProduits/TZA/10772/657637_QuatreTiers.ori.jpg')">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h4 id="t3" style="margin:0;font-size:16px">Safari Tanzanie</h4>
+                                <div class="meta">8 jours • Faune & lodges</div>
+                            </div>
+                            <div class="price-row">
+                                <div>
+                                    <div class="muted">à partir de</div>
+                                    <div class="price">€2 199</div>
+                                </div>
+                                <div><button class="btn primary" onclick="alert('fictif')">Voir</button></div>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+                </div>
+            </section>
+
+            <!-- Testimonials and blog-like block -->
+            <section class="section">
+                <h3>Avis des voyageurs</h3>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <strong>Emma L.</strong>
+                        <p>« Voyage incroyable, tout était bien organisé. L'équipe Sara-Sophia est top ! »</p>
+                        <div class="muted" style="margin-top:8px">Publié: 12 août 2025</div>
+                    </div>
+                    <div class="testimonial">
+                        <strong>Mohamed R.</strong>
+                        <p>« Très bon suivi avant et pendant le séjour. Recommande à 100% »</p>
+                        <div class="muted" style="margin-top:8px">Publié: 28 juin 2025</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simple footer / WP-like bottom widgets -->
+            <footer>
+                <div>
+                    <strong>Sara-Sophia Travel</strong><br>
+                    <span class="muted">Agence indépendante FICTIVE</span>
+                </div>
+                <div class="muted">© <span id="year"></span> Tous droits réservés</div>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
